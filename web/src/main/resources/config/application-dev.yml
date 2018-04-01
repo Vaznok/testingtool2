@@ -1,0 +1,12 @@
+spring:
+    profiles: dev
+service:
+  message: Dev profile
+spring:
+  datasource:
+    driver: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://localhost:3333/testing_tool_dev?useUnicode=true&characterEncoding=utf-8&createDatabaseIfNotExist=true
+    username: root
+    password: root
+  liquibase:
+    change-log: classpath:/db/changelog/db.changelog-master-dev.yaml
