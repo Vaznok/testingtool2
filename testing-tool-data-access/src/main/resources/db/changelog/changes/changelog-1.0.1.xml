@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+
+    <changeSet id="1.0.1" author="Oleksandr_Erzhanov">
+        <insert tableName="users">
+			<column name="email" value="admin@admin.com"/>
+			<column name="password" value="1111"/>
+            <column name="first_name" value="admin" />
+            <column name="last_name"  value="admin" />
+            <column name="city" value="dnipro" />
+            <column name="birthday" value="2000-04-04" />
+            <column name="mobile_phone" value="0943883833" />
+            <column name="user_role" value="ADMIN" />
+		</insert>
+    </changeSet>
+
+    <changeSet id="1.0.2" author="Oleksandr_Erzhanov">
+        <insert tableName="users">
+            <column name="email" value="user@user.com"/>
+            <column name="password" value="22222"/>
+            <column name="first_name" value="user" />
+            <column name="last_name"  value="user" />
+            <column name="city" value="dnipro" />
+            <column name="birthday" value="2000-04-04" />
+            <column name="mobile_phone" value="0943883833" />
+            <column name="user_role" value="USER" />
+        </insert>
+    </changeSet>
+
+    <changeSet id="tag-1.0.1" author="Oleksandr_Erzhanov">
+        <tagDatabase tag="1.0.1" />
+    </changeSet>
+
+</databaseChangeLog>

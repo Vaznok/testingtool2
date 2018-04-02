@@ -30,8 +30,8 @@
             <column name="birthday" type="date">
                 <constraints nullable="true" />
             </column>
-            <column name="gender" type="boolean">
-                <constraints nullable="false" />
+            <column name="gender" type="varchar(30)">
+                <constraints nullable="true" />
             </column>
             <column name="mobile_phone" type="varchar(25)">
                 <constraints nullable="false" />
