@@ -9,5 +9,5 @@ import javax.persistence.Table;
 @Repository
 @Table(name = "users")
 public interface UserRepository extends JpaRepository<User, Long> {
-
+    User findUserByEmail(String email);
 }
