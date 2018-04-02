@@ -8,9 +8,11 @@ import java.util.List;
 
 @Mapper(componentModel = "spring")
 public interface MapStructUserConverter {
+
     UserDto userToUserDto(User user);
 
     List<UserDto> userListToUserDtoList(List<User> userList);
 
     User userDtoToUser(User user);
+
 }
