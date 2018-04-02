@@ -22,8 +22,7 @@ public class UserController {
 
     @GetMapping("/users")
     public String findAllUsers() {
-        System.out.println("444");
-      return userService.findAll().toString();
+        return userService.findAll().toString();
     }
 
     @GetMapping("/user/{email}")
