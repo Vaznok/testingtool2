@@ -8,6 +8,6 @@ import javax.persistence.Table;
 
 @Repository
 @Table(name = "users")
-public interface UserDao extends JpaRepository<User, Long> {
+public interface UserRepository extends JpaRepository<User, Long> {
 
 }

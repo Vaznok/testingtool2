@@ -32,7 +32,7 @@
         </dependency>
         <dependency>
             <groupId>com.epam.rd</groupId>
-            <artifactId>services</artifactId>
+            <artifactId>testing-tool-services</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>
