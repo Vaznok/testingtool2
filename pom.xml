@@ -9,10 +9,10 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>web</module>
-        <module>core</module>
-        <module>services</module>
-        <module>data-access</module>
+        <module>testing-tool-core</module>
+        <module>testing-tool-data-access</module>
+        <module>testing-tool-services</module>
+        <module>testing-tool-web</module>
     </modules>
 
 </project>

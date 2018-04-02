@@ -5,7 +5,7 @@ service:
 spring:
   datasource:
     driver: org.mariadb.jdbc.Driver
-    url: jdbc:mariadb://localhost:3333/hui?useUnicode=true&characterEncoding=utf-8&createDatabaseIfNotExist=true
+    url: jdbc:mariadb://localhost:3306/testing_tool_prod?useUnicode=true&characterEncoding=utf-8&createDatabaseIfNotExist=true
     username: root
     password: root
   liquibase:
