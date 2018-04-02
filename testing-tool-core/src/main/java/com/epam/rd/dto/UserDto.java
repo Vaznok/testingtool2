@@ -1,21 +1,37 @@
 package com.epam.rd.dto;
 
+import java.util.Date;
+
 public class UserDto {
-    private int userId;
+
+    private Long id;
+
     private String email;
+
     private String password;
-    private UserRole userRole;
 
-    public enum UserRole {
-        Student, Mentor, RDHead, TechAdmin
+    private Boolean enabled;
+
+    private String userRole;
+
+    private String firstName;
+
+    private String lastName;
+
+    private Date birthday;
+
+    private String city;
+
+    private Boolean gender;
+
+    private String mobilePhone;
+
+    public Long getId() {
+        return id;
     }
 
-    public int getUserId() {
-        return userId;
-    }
-
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getEmail() {
@@ -34,11 +50,67 @@ public class UserDto {
         this.password = password;
     }
 
-    public UserRole getUserRole() {
+    public Boolean getEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
+    }
+
+    public String getUserRole() {
         return userRole;
     }
 
-    public void setUserRole(UserRole userRole) {
+    public void setUserRole(String userRole) {
         this.userRole = userRole;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public Date getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public Boolean getGender() {
+        return gender;
+    }
+
+    public void setGender(Boolean gender) {
+        this.gender = gender;
+    }
+
+    public String getMobilePhone() {
+        return mobilePhone;
+    }
+
+    public void setMobilePhone(String mobilePhone) {
+        this.mobilePhone = mobilePhone;
     }
 }
