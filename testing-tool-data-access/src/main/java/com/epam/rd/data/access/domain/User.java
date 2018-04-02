@@ -49,6 +49,22 @@ public class User implements Serializable {
     @Column(name = "mobile_phone")
     private String mobilePhone;
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", enabled=" + enabled +
+                ", userRole='" + userRole + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", birthday=" + birthday +
+                ", city='" + city + '\'' +
+                ", gender=" + gender +
+                ", mobilePhone='" + mobilePhone + '\'' +
+                '}';
+    }
 }
 
 
