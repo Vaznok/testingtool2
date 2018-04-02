@@ -22,6 +22,7 @@ public class UserController {
 
     @GetMapping("/users")
     public String findAllUsers() {
+        System.out.println("444");
       return userService.findAll().toString();
     }
 
