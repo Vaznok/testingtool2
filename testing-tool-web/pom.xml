@@ -36,7 +36,11 @@
         </dependency>
         <dependency>
             <groupId>com.epam.rd</groupId>
+<<<<<<< HEAD
             <artifactId>testing-tool-core</artifactId>
+=======
+            <artifactId>testing-tool-data-access</artifactId>
+>>>>>>> 1602b10233462c87351a52d86d03cdb146143968
             <version>${project.version}</version>
         </dependency>
         <dependency>
