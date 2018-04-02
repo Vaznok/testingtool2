@@ -12,19 +12,6 @@ public class User implements Serializable {
     public User() {
     }
 
-    public User(String email, String password, Boolean enabled, UserRole userRole, String firstName, String lastName, Date birthday, String city, Boolean gender, String mobilePhone) {
-        this.email = email;
-        this.password = password;
-        this.enabled = enabled;
-        this.userRole = userRole;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.birthday = birthday;
-        this.city = city;
-        this.gender = gender;
-        this.mobilePhone = mobilePhone;
-    }
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -38,9 +25,8 @@ public class User implements Serializable {
     @Column
     private Boolean enabled;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "role_id")
-    private UserRole userRole;
+    @Column(name = "user_role")
+    private String userRole;
 
     @Column(name = "first_name")
     private String firstName;
@@ -90,14 +76,6 @@ public class User implements Serializable {
 
     public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
-    }
-
-    public UserRole getUserRole() {
-        return userRole;
-    }
-
-    public void setUserRole(UserRole userRole) {
-        this.userRole = userRole;
     }
 
     public String getFirstName() {
@@ -155,7 +133,7 @@ public class User implements Serializable {
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
                 ", enabled=" + enabled +
-                ", userRole=" + userRole +
+                ", userRole='" + userRole + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", birthday=" + birthday +

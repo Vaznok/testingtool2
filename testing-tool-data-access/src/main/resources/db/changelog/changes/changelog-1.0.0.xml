@@ -4,40 +4,6 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
 
-    <changeSet id="create_permissions" author="Vitalii_Vlasenko">
-        <createTable tableName="permission">
-            <column name="id" type="int" autoIncrement="true">
-                <constraints primaryKey="true" />
-            </column>
-            <column name="permission" type="varchar(30)">
-                <constraints nullable="false" unique="true" />
-            </column>
-        </createTable>
-    </changeSet>
-
-
-    <changeSet id="create_roles" author="Vitalii_Vlasenko">
-        <createTable tableName="roles">
-            <column name="id" type="int" autoIncrement="true">
-                <constraints primaryKey="true" />
-            </column>
-            <column name="role" type="varchar(30)">
-                <constraints nullable="false" unique="true" />
-            </column>
-        </createTable>
-    </changeSet>
-
-    <changeSet id="create_permissions_roles" author="Vitalii_Vlasenko">
-        <createTable tableName="permissions_roles">
-            <column name="permission_id" type="int">
-                <constraints nullable="false" foreignKeyName="fk_permission_id" references="permission(id)" deleteCascade="true"/>
-            </column>
-            <column name="role_id" type="int">
-                <constraints nullable="false" foreignKeyName="fk_role_id" references="roles(id)" deleteCascade="true"/>
-            </column>
-        </createTable>
-    </changeSet>
-
     <changeSet id="create_users" author="Vitalii_Vlasenko">
         <createTable tableName="users">
             <column name="id" type="int" autoIncrement="true">
@@ -70,8 +36,8 @@
             <column name="mobile_phone" type="varchar(25)">
                 <constraints nullable="false" />
             </column>
-            <column name="role_id" type="int">
-                <constraints nullable="false" foreignKeyName="fk_role_id" />
+            <column name="user_role" type="varchar(25)">
+                <constraints nullable="false" />
             </column>
         </createTable>
     </changeSet>
