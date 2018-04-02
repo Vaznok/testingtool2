@@ -113,4 +113,21 @@ public class UserDto {
     public void setMobilePhone(String mobilePhone) {
         this.mobilePhone = mobilePhone;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", enabled=" + enabled +
+                ", userRole='" + userRole + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", birthday=" + birthday +
+                ", city='" + city + '\'' +
+                ", gender=" + gender +
+                ", mobilePhone='" + mobilePhone + '\'' +
+                '}';
+    }
 }
