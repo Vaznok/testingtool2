@@ -2,7 +2,6 @@ package com.epam.rd.controllers;
 
 import com.epam.rd.dto.UserDto;
 import com.epam.rd.facades.DefaultUserFacade;
-import com.epam.rd.services.UserService;
 import org.jsondoc.core.annotation.Api;
 import org.jsondoc.core.annotation.ApiMethod;
 import org.jsondoc.core.pojo.ApiStage;
@@ -27,12 +26,39 @@ public class UserController {
         return userFacade.findAll();
     }
 
-    @GetMapping("/user/{email}")
-    @ApiMethod(description = "get user by email")
+    @GetMapping("/user/{id}")
+    @ApiMethod(description = "Get user by id")
     public @ResponseBody
-    ResponseEntity<?> findUserByEmail(@Email @PathVariable("email") String email) {
-        UserDto userDto = userFacade.findUserByEmail(email);
+    ResponseEntity<?> findUserById(@PathVariable("id") Long id) {
+        UserDto userDto = userFacade.findUserById(id);
         return new ResponseEntity<>(userDto, HttpStatus.OK);
     }
 
+    @PostMapping("/user/")
+    @ApiMethod(description = "Create new user")
+    public ResponseEntity createUser(@RequestBody UserDto dto) {
+        UserDto resp = userFacade.createUser(dto);
+        return new ResponseEntity<>(resp, HttpStatus.OK);
+    }
+
+    @PutMapping("/user/{id}")
+    @ApiMethod(description = "Update user by id")
+    public ResponseEntity updateUserById(@PathVariable("id") Long id, @RequestBody UserDto dto) {
+        UserDto resp = userFacade.updateUser(id, dto);
+        return new ResponseEntity<>(resp, HttpStatus.OK);
+    }
+
+    @DeleteMapping("/user/{id}")
+    @ApiMethod(description = "Delete user by id")
+    public @ResponseBody ResponseEntity<?> deleteUserById(@PathVariable("id") Long id) {
+        userFacade.deleteUserById(id);
+        return ResponseEntity.status(HttpStatus.OK).build();
+    }
+
+    @GetMapping("/userprofile/{email}")
+    @ApiMethod(description = "Get userprofile by email")
+    public @ResponseBody ResponseEntity<?> findUserByEmail(@Email @PathVariable("email") String email) {
+        UserDto userDto = userFacade.findUserByEmail(email);
+        return new ResponseEntity<>(userDto, HttpStatus.OK);
+    }
 }

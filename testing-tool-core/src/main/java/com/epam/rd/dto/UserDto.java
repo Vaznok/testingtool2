@@ -8,7 +8,6 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.Data;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
 @Data
