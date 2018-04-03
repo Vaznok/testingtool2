@@ -1,6 +1,5 @@
 package com.epam.rd.dto;
 
-import com.epam.rd.data.access.domain.UserRole;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.util.Date;
