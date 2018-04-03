@@ -48,7 +48,7 @@
             <column name="city" value="dnipro" />
             <column name="birthday" value="2000-04-04" />
             <column name="mobile_phone" value="0943883833" />
-            <column name="role_id" value="2" />
+            <column name="role_id" value="1" />
         </insert>
     </changeSet>
 
@@ -86,7 +86,7 @@
             <column name="city" value="dnipro" />
             <column name="birthday" value="2000-04-04" />
             <column name="mobile_phone" value="0943883833" />
-            <column name="role_id" value="1" />
+            <column name="role_id" value="2" />
         </insert>
     </changeSet>
 

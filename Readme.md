@@ -47,3 +47,6 @@ To **_run application with maven (without using docker)_** execute
 >mvnw clean install && mvnw spring-boot:run -pl testing-tool-web -Dspring.profiles.active=${profile}
 
 `Example:` mvnw clean install && mvnw spring-boot:run -pl testing-tool-web -Dspring.profiles.active=local
+
+POSTMAN link to check URL requests:
+    https://www.getpostman.com/collections/893028e03661f5b1b106

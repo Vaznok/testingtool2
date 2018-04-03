@@ -18,6 +18,9 @@
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.version>3.7.0</maven.compiler.version>
+        <mapstruct-processor.version>1.2.0.Final</mapstruct-processor.version>
+        <lombok.version>1.16.20</lombok.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jacoco.version>0.8.1</jacoco.version>
     </properties>
@@ -45,7 +48,7 @@
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
-                <version>1.16.20</version>
+                <version>${lombok.version}</version>
                 <scope>provided</scope>
             </dependency>
 

@@ -13,6 +13,6 @@ public interface MapStructUserConverter {
 
     List<UserDto> userListToUserDtoList(List<User> userList);
 
-    User userDtoToUser(User user);
+    User userDtoToUser(UserDto userDto);
 
 }
