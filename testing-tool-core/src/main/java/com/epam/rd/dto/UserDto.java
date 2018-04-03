@@ -1,12 +1,10 @@
 package com.epam.rd.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-//import lombok.Data;
 
 import java.util.Date;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-//@Data
 public class UserDto {
 
     private Long id;
@@ -119,20 +117,4 @@ public class UserDto {
         this.mobilePhone = mobilePhone;
     }
 
-    @Override
-    public String toString() {
-        return "UserDto{" +
-                "id=" + id +
-                ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                ", enabled=" + enabled +
-                ", userRole='" + userRole + '\'' +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", birthday=" + birthday +
-                ", city='" + city + '\'' +
-                ", gender=" + gender +
-                ", mobilePhone='" + mobilePhone + '\'' +
-                '}';
-    }
 }

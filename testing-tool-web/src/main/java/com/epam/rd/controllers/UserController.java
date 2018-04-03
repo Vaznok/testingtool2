@@ -1,6 +1,5 @@
 package com.epam.rd.controllers;
 
-import com.epam.rd.data.access.domain.User;
 import com.epam.rd.dto.UserDto;
 import com.epam.rd.facades.DefaultUserFacade;
 import com.epam.rd.services.UserService;
@@ -18,9 +17,6 @@ import java.util.List;
 @RestController
 @Api(name = "Users API", description = "Provides a list of methods that manage user", stage = ApiStage.ALPHA)
 public class UserController {
-
-    @Autowired
-    private UserService userService;
 
     @Autowired
     private DefaultUserFacade userFacade;

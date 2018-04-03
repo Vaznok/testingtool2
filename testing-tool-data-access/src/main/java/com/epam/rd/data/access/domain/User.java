@@ -12,9 +12,6 @@ import java.util.Date;
 @Table(name = "users")
 public class User implements Serializable {
 
-    public User() {
-    }
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -28,8 +25,9 @@ public class User implements Serializable {
     @Column
     private Boolean enabled;
 
-    @Column(name = "user_role")
-    private String userRole;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "role_id")
+    private UserRole userRole;
 
     @Column(name = "first_name")
     private String firstName;
@@ -49,22 +47,7 @@ public class User implements Serializable {
     @Column(name = "mobile_phone")
     private String mobilePhone;
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                ", enabled=" + enabled +
-                ", userRole='" + userRole + '\'' +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", birthday=" + birthday +
-                ", city='" + city + '\'' +
-                ", gender=" + gender +
-                ", mobilePhone='" + mobilePhone + '\'' +
-                '}';
+    public String getUserRole() {
+        return userRole.getRole();
     }
 }
-
-
