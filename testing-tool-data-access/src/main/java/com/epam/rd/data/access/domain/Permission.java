@@ -10,12 +10,6 @@ import java.util.Set;
 @Entity
 @Table(name = "permissions")
 public class Permission implements Serializable {
-    public Permission() {
-    }
-
-    public Permission(String permission) {
-        this.permission = permission;
-    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -25,5 +19,5 @@ public class Permission implements Serializable {
     private String permission;
 
     @ManyToMany(fetch = FetchType.LAZY)
-    private Set<User> users;
+    private Set<UserRole> roles;
 }

@@ -33,7 +33,7 @@
         </insert>
     </changeSet>
 
-    <changeSet id="1.0.1" author="Oleksandr_Erzhanov">
+    <changeSet id="add_default_admin" author="Oleksandr_Erzhanov">
         <insert tableName="users">
             <column name="email" value="admin@admin.com"/>
             <column name="password" value="1111"/>
@@ -46,7 +46,7 @@
         </insert>
     </changeSet>
 
-    <changeSet id="1.0.2" author="Oleksandr_Erzhanov">
+    <changeSet id="add_default_user" author="Oleksandr_Erzhanov">
         <insert tableName="users">
             <column name="email" value="user@user.com"/>
             <column name="password" value="22222"/>

@@ -4,7 +4,6 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Set;
 
 @Data
 @Entity
@@ -16,8 +15,5 @@ public class UserRole implements Serializable {
 
     @Column(unique = true)
     private String role;
-
-    @OneToMany(fetch = FetchType.LAZY)
-    private Set<User> users;
 }
 
