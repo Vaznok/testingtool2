@@ -17,7 +17,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
         <jsondoc.version>1</jsondoc.version>
-        <jsondoc.basePath>localhost:8080/</jsondoc.basePath>
+        <jsondoc.basePath>http://localhost:8080/</jsondoc.basePath>
+        <jsondoc.packages>com.epam.rd.controllers</jsondoc.packages>
     </properties>
 
     <dependencies>

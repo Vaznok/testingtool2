@@ -14,7 +14,6 @@ import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 @SpringBootApplication(scanBasePackages = "com.*")
 @EntityScan("com.*")
 @EnableJSONDoc
-@ComponentScan
 public class Application {
 
     @Bean
