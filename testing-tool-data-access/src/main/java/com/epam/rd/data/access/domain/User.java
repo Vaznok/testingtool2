@@ -42,12 +42,8 @@ public class User implements Serializable {
     private String city;
 
     @Column
-    private Boolean gender;
+    private String gender;
 
     @Column(name = "mobile_phone")
     private String mobilePhone;
-
-    public String getUserRole() {
-        return userRole.getRole();
-    }
 }

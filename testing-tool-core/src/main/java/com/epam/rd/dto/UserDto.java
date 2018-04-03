@@ -1,5 +1,6 @@
 package com.epam.rd.dto;
 
+import com.epam.rd.data.access.domain.UserRole;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.util.Date;
@@ -15,7 +16,7 @@ public class UserDto {
 
     private Boolean enabled;
 
-    private String userRole;
+    private UserRoleDto userRole;
 
     private String firstName;
 
@@ -25,7 +26,7 @@ public class UserDto {
 
     private String city;
 
-    private Boolean gender;
+    private String gender;
 
     private String mobilePhone;
 
@@ -61,11 +62,11 @@ public class UserDto {
         this.enabled = enabled;
     }
 
-    public String getUserRole() {
+    public UserRoleDto getUserRole() {
         return userRole;
     }
 
-    public void setUserRole(String userRole) {
+    public void setUserRole(UserRoleDto userRole) {
         this.userRole = userRole;
     }
 
@@ -101,11 +102,11 @@ public class UserDto {
         this.city = city;
     }
 
-    public Boolean getGender() {
+    public String getGender() {
         return gender;
     }
 
-    public void setGender(Boolean gender) {
+    public void setGender(String gender) {
         this.gender = gender;
     }
 
