@@ -1,12 +1,13 @@
 package com.epam.rd.dto;
 
-import com.epam.rd.data.access.domain.UserRole;
+import com.epam.rd.data.access.domain.Role;
+
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")
 public interface MapStructRoleConverter {
 
-    UserRoleDto userRoleToUserRoleDto(UserRole userRole);
+    UserRoleDto userRoleToUserRoleDto(Role userRole);
 
-    UserRole userRoleDtoToUserRole(UserRoleDto userRoleDto);
+    Role userRoleDtoToUserRole(UserRoleDto userRoleDto);
 }

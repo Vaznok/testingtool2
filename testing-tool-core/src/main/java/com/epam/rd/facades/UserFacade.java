@@ -1,6 +1,5 @@
 package com.epam.rd.facades;
 
-import com.epam.rd.data.access.domain.User;
 import com.epam.rd.dto.UserDto;
 
 import java.util.List;

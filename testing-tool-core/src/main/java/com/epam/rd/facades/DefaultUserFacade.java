@@ -25,7 +25,7 @@ public class DefaultUserFacade implements UserFacade {
 
     @Override
     public UserDto findUserByEmail(String email) {
-        return userConverter.userToUserDto(userService.findUserByEmail(email));
+        return userConverter.userToUserDto(userService.getByEmail(email));
     }
 
     @Override

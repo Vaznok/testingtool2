@@ -6,6 +6,7 @@ import javax.persistence.*;
 import javax.persistence.Entity;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 @Data
 @Entity
@@ -25,9 +26,9 @@ public class User implements Serializable {
     @Column
     private Boolean enabled;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "role_id")
-    private UserRole userRole;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name="role_id")
+    private Role roles;
 
     @Column(name = "first_name")
     private String firstName;
@@ -46,4 +47,5 @@ public class User implements Serializable {
 
     @Column(name = "mobile_phone")
     private String mobilePhone;
+
 }

@@ -6,11 +6,16 @@ server:
     path: /api/v1
 service:
   message: Local profile
+demo.security.jwt:
+  tokenExpirationTime: 15 # Number of minutes
+  refreshTokenExpTime: 60 # Minutes
+  tokenIssuer: com.epa.rd
+  tokenSigningKey: xm8EV6Hy5RMFK4EEACIDAwQus
 spring:
   datasource:
     driver: org.mariadb.jdbc.Driver
-    url: jdbc:mariadb://localhost:3306/testing_tool_local?useUnicode=true&characterEncoding=utf-8&createDatabaseIfNotExist=true
+    url: jdbc:mariadb://localhost:3306/test_db?useUnicode=true&characterEncoding=utf-8&createDatabaseIfNotExist=true
     username: root
-    password: root
+    password: 110991qwe
   liquibase:
     change-log: classpath:/db/changelog/db.changelog-master-local.yaml

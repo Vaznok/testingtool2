@@ -44,7 +44,7 @@ File->Settings->Plugins
 
 To **_run application with maven (without using docker)_** execute
 
->mvnw clean install && mvnw spring-boot:run -pl testing-tool-web -Dspring.profiles.active=${profile}
+>mvnw clean install && mvn spring-boot:run -pl testing-tool-web -Dspring.profiles.active=local
 
 `Example:` mvnw clean install && mvnw spring-boot:run -pl testing-tool-web -Dspring.profiles.active=local
 
