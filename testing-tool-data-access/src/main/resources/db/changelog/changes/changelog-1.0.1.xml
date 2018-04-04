@@ -24,31 +24,12 @@
 
     <changeSet id="add_permissions_roles" author="Vitalii_Vlasenko">
         <insert tableName="permissions_roles">
-            <column name="permission_id" value="1"/>
-            <column name="role_id" value="1"/>
+            <column name="permission" value="CREATE TEST"/>
+            <column name="role" value="ADMIN"/>
         </insert>
         <insert tableName="permissions_roles">
-            <column name="permission_id" value="2"/>
-            <column name="role_id" value="2"/>
-        </insert>
-    </changeSet>
-
-    <changeSet id="add_default_admin" author="Oleksandr_Erzhanov">
-        <preConditions onFail="MARK_RAN">
-            <sqlCheck expectedResult="0">
-                SELECT count(*) FROM users WHERE email = "admin@admin.com";
-            </sqlCheck>
-        </preConditions>
-        <comment>add default admin</comment>
-        <insert tableName="users">
-            <column name="email" value="admin@admin.com"/>
-            <column name="password" value="1111"/>
-            <column name="first_name" value="admin" />
-            <column name="last_name"  value="admin" />
-            <column name="city" value="dnipro" />
-            <column name="birthday" value="2000-04-04" />
-            <column name="mobile_phone" value="0943883833" />
-            <column name="role_id" value="1" />
+            <column name="permission" value="TAKE A TEST"/>
+            <column name="role" value="USER"/>
         </insert>
     </changeSet>
 
@@ -67,7 +48,45 @@
             <column name="city" value="dnipro" />
             <column name="birthday" value="2000-04-04" />
             <column name="mobile_phone" value="0943883833" />
-            <column name="role_id" value="1" />
+            <column name="role" value="ADMIN" />
+        </update>
+    </changeSet>
+
+    <changeSet id="add_default_admin" author="Oleksandr_Erzhanov">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) FROM users WHERE email = "admin@admin.com";
+            </sqlCheck>
+        </preConditions>
+        <comment>add default admin</comment>
+        <insert tableName="users">
+            <column name="email" value="admin@admin.com"/>
+            <column name="password" value="1111"/>
+            <column name="first_name" value="admin" />
+            <column name="last_name"  value="admin" />
+            <column name="city" value="dnipro" />
+            <column name="birthday" value="2000-04-04" />
+            <column name="mobile_phone" value="0943883833" />
+            <column name="role" value="ADMIN" />
+        </insert>
+    </changeSet>
+
+    <changeSet id="update_default_user" author="Oleksandr_Erzhanov">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="1">
+                SELECT count(*) FROM users WHERE email = "user@user.com";
+            </sqlCheck>
+        </preConditions>
+        <comment>update default user</comment>
+        <update tableName="users">
+            <column name="email" value="user@user.com"/>
+            <column name="password" value="22222"/>
+            <column name="first_name" value="user" />
+            <column name="last_name"  value="user" />
+            <column name="city" value="dnipro" />
+            <column name="birthday" value="2000-04-04" />
+            <column name="mobile_phone" value="0943883833" />
+            <column name="role" value="USER" />
         </update>
     </changeSet>
 
@@ -86,27 +105,8 @@
             <column name="city" value="dnipro" />
             <column name="birthday" value="2000-04-04" />
             <column name="mobile_phone" value="0943883833" />
-            <column name="role_id" value="2" />
+            <column name="role" value="USER" />
         </insert>
-    </changeSet>
-
-    <changeSet id="update_default_user" author="Oleksandr_Erzhanov">
-        <preConditions onFail="MARK_RAN">
-            <sqlCheck expectedResult="0">
-                SELECT count(*) FROM users WHERE email = "user@user.com";
-            </sqlCheck>
-        </preConditions>
-        <comment>update default user</comment>
-        <update tableName="users">
-            <column name="email" value="user@user.com"/>
-            <column name="password" value="22222"/>
-            <column name="first_name" value="user" />
-            <column name="last_name"  value="user" />
-            <column name="city" value="dnipro" />
-            <column name="birthday" value="2000-04-04" />
-            <column name="mobile_phone" value="0943883833" />
-            <column name="role_id" value="1" />
-        </update>
     </changeSet>
 
 </databaseChangeLog>
