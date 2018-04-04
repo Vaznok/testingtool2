@@ -1,5 +1,9 @@
 spring:
     profiles: dev
+server:
+  servlet:
+    context-path: /testing-tool
+    servlet.path: /api/v1
 service:
   message: Dev profile
 spring:
