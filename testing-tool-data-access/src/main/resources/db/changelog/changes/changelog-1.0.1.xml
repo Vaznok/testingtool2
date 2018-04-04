@@ -23,13 +23,13 @@
     </changeSet>
 
     <changeSet id="add_permissions_roles" author="Vitalii_Vlasenko">
-        <insert tableName="permissions_roles">
-            <column name="permission_id" value="1"/>
+        <insert tableName="roles_permissions">
             <column name="role_id" value="1"/>
+            <column name="permission_id" value="1"/>
         </insert>
-        <insert tableName="permissions_roles">
-            <column name="permission_id" value="2"/>
+        <insert tableName="roles_permissions">
             <column name="role_id" value="2"/>
+            <column name="permission_id" value="2"/>
         </insert>
     </changeSet>
 

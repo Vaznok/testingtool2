@@ -3,7 +3,7 @@ spring:
 server:
   servlet:
     context-path: /testing-tool
-    servlet.path: /api/v1
+    path: /api/v1
 service:
   message: Local profile
 spring:

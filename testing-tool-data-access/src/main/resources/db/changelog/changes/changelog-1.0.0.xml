@@ -26,13 +26,13 @@
         </createTable>
     </changeSet>
 
-    <changeSet id="create_permissions_roles" author="Vitalii_Vlasenko">
-        <createTable tableName="permissions_roles">
-            <column name="permission_id" type="int">
-                <constraints nullable="false" foreignKeyName="fk_permission_id" references="permissions(id)"/>
-            </column>
+    <changeSet id="create_roles_permissions" author="Vitalii_Vlasenko">
+        <createTable tableName="roles_permissions">
             <column name="role_id" type="int">
                 <constraints nullable="false" foreignKeyName="fk_role_id" references="roles(id)" />
+            </column>
+            <column name="permission_id" type="int">
+                <constraints nullable="false" foreignKeyName="fk_permission_id" references="permissions(id)"/>
             </column>
         </createTable>
     </changeSet>
