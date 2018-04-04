@@ -6,27 +6,33 @@
 
     <changeSet id="create_permissions" author="Vitalii_Vlasenko">
         <createTable tableName="permissions">
-            <column name="permission" type="varchar(30)">
+            <column name="id" type="int" autoIncrement="true">
                 <constraints primaryKey="true" />
+            </column>
+            <column name="permission" type="varchar(30)">
+                <constraints nullable="false" unique="true" />
             </column>
         </createTable>
     </changeSet>
 
     <changeSet id="create_roles" author="Vitalii_Vlasenko">
         <createTable tableName="roles">
-            <column name="role" type="varchar(30)">
+            <column name="id" type="int" autoIncrement="true">
                 <constraints primaryKey="true" />
+            </column>
+            <column name="role" type="varchar(30)">
+                <constraints nullable="false" unique="true" />
             </column>
         </createTable>
     </changeSet>
 
     <changeSet id="create_permissions_roles" author="Vitalii_Vlasenko">
         <createTable tableName="permissions_roles">
-            <column name="permission" type="varchar(30)">
-                <constraints nullable="false" foreignKeyName="fk_permission" references="permissions(permission)"/>
+            <column name="permission_id" type="int">
+                <constraints nullable="false" foreignKeyName="fk_permission_id" references="permissions(id)"/>
             </column>
-            <column name="role" type="varchar(30)">
-                <constraints nullable="false" foreignKeyName="fk_role" references="roles(role)" />
+            <column name="role_id" type="int">
+                <constraints nullable="false" foreignKeyName="fk_role_id" references="roles(id)" />
             </column>
         </createTable>
     </changeSet>
@@ -63,8 +69,8 @@
             <column name="mobile_phone" type="varchar(25)">
                 <constraints nullable="false" />
             </column>
-            <column name="role" type="varchar(30)">
-                <constraints nullable="false" foreignKeyName="fk_role_id_user" references="roles(role)" />
+            <column name="role_id" type="int">
+                <constraints nullable="false" foreignKeyName="fk_role_id_user" references="roles(id)" />
             </column>
         </createTable>
     </changeSet>

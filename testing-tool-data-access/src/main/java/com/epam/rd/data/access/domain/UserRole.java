@@ -4,17 +4,16 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Set;
 
 @Data
 @Entity
 @Table(name = "roles")
 public class UserRole implements Serializable {
-
     @Id
-    private String role;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 
-    @ManyToMany(fetch = FetchType.LAZY)
-    private Set<Permission> permissions;
+    @Column(unique = true)
+    private String role;
 }
 

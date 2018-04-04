@@ -12,5 +12,12 @@ import java.util.Set;
 public class Permission implements Serializable {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
+
+    @Column(unique = true)
     private String permission;
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    private Set<UserRole> roles;
 }
